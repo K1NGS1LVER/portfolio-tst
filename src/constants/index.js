@@ -1,3 +1,7 @@
+/**
+ * Central data for the portfolio: services (Services section), projects (Works), social links (Navbar/Contact).
+ * Edit these arrays to change copy, links, and image paths. Image paths are relative to public/.
+ */
 // index.js
 export const servicesData = [
   {
@@ -77,6 +81,7 @@ export const servicesData = [
     ],
   },
 ];
+/** Project cards for Works section: name, description, image, bgImage, frameworks; href can link to live/demo */
 export const projects = [
   {
     id: 1,
@@ -170,6 +175,7 @@ export const projects = [
     ],
   },
 ];
+/** Social links used in Navbar and Contact; name + href */
 export const socials = [
   { name: "Instagram", href: "https://www.instagram.com/ali.sanatidev/reels/" },
   {

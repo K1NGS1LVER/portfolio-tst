@@ -1,9 +1,14 @@
+/**
+ * Service summary: large scrolling titles with parallax-style movement.
+ * Each title block moves at different xPercent as user scrolls (scrub = tied to scroll position).
+ */
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
 gsap.registerPlugin(ScrollTrigger);
 const ServiceSummary = () => {
   useGSAP(() => {
+    // scrub: true links animation progress to scroll position for parallax effect
     gsap.to("#title-service-1", {
       xPercent: 20,
       scrollTrigger: {

@@ -1,3 +1,7 @@
+/**
+ * Contact summary: two marquee strips with a centered CTA in between.
+ * ScrollTrigger pins this section while scrolling through (pin: true) for a focused moment.
+ */
 import { useRef } from "react";
 import Marquee from "../components/Marquee";
 import { useGSAP } from "@gsap/react";
@@ -21,6 +25,7 @@ const ContactSummary = () => {
   ];
 
   useGSAP(() => {
+    // Pin this section for ~800px of scroll (start when center hits viewport center)
     gsap.to(containerRef.current, {
       scrollTrigger: {
         trigger: containerRef.current,

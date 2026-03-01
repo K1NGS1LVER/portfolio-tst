@@ -1,3 +1,7 @@
+/**
+ * Hero section: full-viewport intro with 3D planet (Three.js) and animated header.
+ * Section id="home" is the target for nav scroll links.
+ */
 import { Canvas } from "@react-three/fiber";
 import { Planet } from "../components/Planet";
 import { Environment, Float, Lightformer } from "@react-three/drei";
@@ -16,6 +20,7 @@ results driven webs/apps`;
         text={text}
         textColor={"text-black"}
       />
+      {/* 3D scene sits behind content; Canvas from React Three Fiber */}
       <figure
         className="absolute inset-0 -z-50"
         style={{ width: "100vw", height: "100vh" }}
@@ -25,6 +30,7 @@ results driven webs/apps`;
           camera={{ position: [0, 0, -10], fov: 17.5, near: 1, far: 20 }}
         >
           <ambientLight intensity={0.5} />
+          {/* Float gives subtle floating animation; smaller scale on mobile for performance/layout */}
           <Float speed={0.5}>
             <Planet scale={isMobile ? 0.7 : 1} />
           </Float>

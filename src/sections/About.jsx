@@ -1,3 +1,7 @@
+/**
+ * About section: header + image with clip-path reveal + AnimatedTextLines for bio.
+ * Section scales slightly on scroll; image animates from “closed” clip to full visibility.
+ */
 import { useRef } from "react";
 import AnimatedHeaderSection from "../components/AnimatedHeaderSection";
 import { AnimatedTextLines } from "../components/AnimatedTextLines";
@@ -16,6 +20,7 @@ const About = () => {
 🎸 Strumming chords while CI pipelines pass (multitasking at its finest)`;
   const imgRef = useRef(null);
   useGSAP(() => {
+    // Subtle scale-down of whole section as it scrolls through view
     gsap.to("#about", {
       scale: 0.95,
       scrollTrigger: {
@@ -28,6 +33,7 @@ const About = () => {
       ease: "power1.inOut",
     });
 
+    // Start with image “hidden” (clip at bottom); animate to full rectangle on scroll into view
     gsap.set(imgRef.current, {
       clipPath: "polygon(0 100%, 100% 100%, 100% 100%, 0% 100%)",
     });

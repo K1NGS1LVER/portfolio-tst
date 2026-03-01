@@ -1,3 +1,7 @@
+/**
+ * Reusable section header: subtitle, large title (split by spaces into lines), and body text.
+ * Optional scroll-triggered timeline (withScrollTrigger) so animation starts when section enters view.
+ */
 import React from "react";
 import { useRef } from "react";
 import { AnimatedTextLines } from "../components/AnimatedTextLines";
@@ -35,11 +39,12 @@ const AnimatedHeaderSection = ({
         duration: 1,
         ease: "circ.out",
       },
-      "<+0.2"
+      "<+0.2" // Start 0.2s after previous tween
     );
   }, []);
   return (
     <div ref={contextRef}>
+      {/* clipPath keeps overflow hidden for the sliding-up animation */}
       <div style={{ clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)" }}>
         <div
           ref={headerRef}

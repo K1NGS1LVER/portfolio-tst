@@ -1,3 +1,7 @@
+/**
+ * Renders multi-line text with each line animated in (staggered from bottom, back.out).
+ * Text is split by newlines; empty lines are filtered out. Requires ScrollTrigger.
+ */
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";

@@ -1,3 +1,7 @@
+/**
+ * ESLint flat config: JS/JSX with React hooks and refresh rules.
+ * dist/ is ignored. no-unused-vars allows UPPER_CASE and single-letter vars (e.g. in GSAP callbacks).
+ */
 import js from '@eslint/js'
 import globals from 'globals'
 import reactHooks from 'eslint-plugin-react-hooks'

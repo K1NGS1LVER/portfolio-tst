@@ -1,3 +1,8 @@
+/**
+ * Works section: list of projects from constants. On desktop, hover shows a floating
+ * preview image and clip-path overlay; on mobile, inline project image. Uses gsap.quickTo
+ * for smooth follow-cursor preview position.
+ */
 import { Icon } from "@iconify/react/dist/iconify.js";
 import AnimatedHeaderSection from "../components/AnimatedHeaderSection";
 import { projects } from "../constants";
@@ -19,6 +24,7 @@ const Works = () => {
   const moveY = useRef(null);
 
   useGSAP(() => {
+    // quickTo: efficient way to animate to a moving target (cursor); returns a function you call with new value
     moveX.current = gsap.quickTo(previewRef.current, "x", {
       duration: 1.5,
       ease: "power3.out",
@@ -28,6 +34,7 @@ const Works = () => {
       ease: "power3.out",
     });
 
+    // Project rows animate in on scroll
     gsap.from("#project", {
       y: 100,
       opacity: 0,
@@ -41,6 +48,7 @@ const Works = () => {
     });
   }, []);
 
+  // Desktop: reveal overlay and show floating preview image for this project
   const handleMouseEnter = (index) => {
     if (window.innerWidth < 768) return;
     setCurrentIndex(index);
@@ -91,6 +99,7 @@ const Works = () => {
     });
   };
 
+  // Update floating preview position to follow cursor (offset +24 for visual balance)
   const handleMouseMove = (e) => {
     if (window.innerWidth < 768) return;
     mouse.current.x = e.clientX + 24;

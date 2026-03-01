@@ -1,3 +1,7 @@
+/**
+ * Contact section: header, email/phone/social from constants, and bottom marquee.
+ * Section id="contact" is the target for nav scroll links. .social-link elements animate in on scroll.
+ */
 import { useGSAP } from "@gsap/react";
 import AnimatedHeaderSection from "../components/AnimatedHeaderSection";
 import Marquee from "../components/Marquee";
@@ -15,6 +19,7 @@ const Contact = () => {
     "just imagin, I code",
   ];
   useGSAP(() => {
+    // All elements with class .social-link animate in with stagger when section is in view
     gsap.from(".social-link", {
       y: 100,
       opacity: 0,

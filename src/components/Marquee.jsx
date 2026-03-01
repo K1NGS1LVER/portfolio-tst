@@ -1,3 +1,8 @@
+/**
+ * Infinite horizontal marquee. items[] are repeated with an optional Iconify icon.
+ * horizontalLoop: GSAP timeline that loops items; reverse inverts direction.
+ * Observer speeds up marquee on scroll (deltaY) for a responsive feel.
+ */
 import { Icon } from "@iconify/react/dist/iconify.js";
 import gsap from "gsap";
 import { Observer } from "gsap/all";
@@ -13,6 +18,7 @@ const Marquee = ({
   const containerRef = useRef(null);
   const itemsRef = useRef([]);
 
+  /** Builds a repeating horizontal loop timeline; config.reversed flips direction */
   function horizontalLoop(items, config) {
     items = gsap.utils.toArray(items);
     config = config || {};
@@ -124,6 +130,7 @@ const Marquee = ({
       reversed: reverse,
     });
 
+    // Optional: speed up marquee when user scrolls (scroll direction affects direction)
     Observer.create({
       onChangeY(self) {
         let factor = 2.5;

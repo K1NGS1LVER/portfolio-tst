@@ -1,3 +1,7 @@
+/**
+ * Services section: dark block with sticky service cards. Each card animates in on scroll;
+ * on desktop, sticky top and margin create a stacked “stack” effect as you scroll.
+ */
 import { useRef } from "react";
 import AnimatedHeaderSection from "../components/AnimatedHeaderSection";
 import { servicesData } from "../constants";
@@ -11,6 +15,7 @@ const Services = () => {
   const serviceRefs = useRef([]);
   const isDesktop = useMediaQuery({ minWidth: "48rem" }); //768px
   useGSAP(() => {
+    // Each service block animates from below when it enters view (start: "top 80%")
     serviceRefs.current.forEach((el) => {
       if (!el) return;
 
@@ -42,6 +47,7 @@ const Services = () => {
           style={
             isDesktop
               ? {
+                  // Sticky offset increases per card so they stack visually as you scroll
                   top: `calc(10vh + ${index * 5}em)`,
                   marginBottom: `${(servicesData.length - index - 1) * 5}rem`,
                 }
