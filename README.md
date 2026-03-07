@@ -11,13 +11,13 @@ A modern, single-page portfolio landing page built with React, Vite, and Tailwin
 
 - **Live Demo:** [https://portfolio-ui-5.vercel.app/](https://portfolio-ui-5.vercel.app/)
 
-<img width="1897" height="953" alt="Screenshot 2026-03-07 at 11 37 26" src="https://github.com/user-attachments/assets/ec53e01e-338f-4c3f-81a1-cbd0db880be6" />
-<img width="1888" height="954" alt="Screenshot 2026-03-07 at 11 37 43" src="https://github.com/user-attachments/assets/c8801ed2-4341-40e6-bb4b-eeaf63f08fd4" />
-<img width="1899" height="942" alt="Screenshot 2026-03-07 at 11 38 02" src="https://github.com/user-attachments/assets/d62029e1-8ba3-4ac3-b149-d4d520a1b38f" />
-<img width="1879" height="932" alt="Screenshot 2026-03-07 at 11 38 44" src="https://github.com/user-attachments/assets/a9ff62ef-e99d-4627-b446-35255a092819" />
-<img width="1892" height="954" alt="Screenshot 2026-03-07 at 11 38 58" src="https://github.com/user-attachments/assets/9fd71141-7538-4b7f-8d5a-07e46bc41e74" />
-<img width="1901" height="941" alt="Screenshot 2026-03-07 at 11 39 18" src="https://github.com/user-attachments/assets/96cef7ab-0e0d-448f-81ea-849b93e3b6fc" />
-<img width="1882" height="931" alt="Screenshot 2026-03-07 at 11 39 39" src="https://github.com/user-attachments/assets/116e33a7-d8af-4f31-bfd9-2a66dd963f59" />
+![Screenshot 2026-03-07 at 11 37 26](https://github.com/user-attachments/assets/ec53e01e-338f-4c3f-81a1-cbd0db880be6)
+![Screenshot 2026-03-07 at 11 37 43](https://github.com/user-attachments/assets/c8801ed2-4341-40e6-bb4b-eeaf63f08fd4)
+![Screenshot 2026-03-07 at 11 38 02](https://github.com/user-attachments/assets/d62029e1-8ba3-4ac3-b149-d4d520a1b38f)
+![Screenshot 2026-03-07 at 11 38 44](https://github.com/user-attachments/assets/a9ff62ef-e99d-4627-b446-35255a092819)
+![Screenshot 2026-03-07 at 11 38 58](https://github.com/user-attachments/assets/9fd71141-7538-4b7f-8d5a-07e46bc41e74)
+![Screenshot 2026-03-07 at 11 39 18](https://github.com/user-attachments/assets/96cef7ab-0e0d-448f-81ea-849b93e3b6fc)
+![Screenshot 2026-03-07 at 11 39 39](https://github.com/user-attachments/assets/116e33a7-d8af-4f31-bfd9-2a66dd963f59)
 
 ## Table of Contents
 
