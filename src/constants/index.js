@@ -1,187 +1,113 @@
 /**
- * Central data for the portfolio: services (Services section), projects (Works), social links (Navbar/Contact).
- * Edit these arrays to change copy, links, and image paths. Image paths are relative to public/.
+ * Central data for Daniel Paul's portfolio.
+ * Skills (Skills section), projects (Works), social links (Navbar/Contact).
+ * Edit these arrays to update copy, links, and image paths. Image paths are relative to public/.
  */
-// index.js
-export const servicesData = [
+
+export const skillsData = [
   {
-    title: "FullStack Development",
+    title: "Full-Stack Engineering",
     description:
-      "Your business deserves a fast, secure, and future-proof digital foundation. I develop custom web apps with clean architecture, optimized databases, and seamless integrations—ensuring reliability at every layer.",
+      "From pixel-perfect React UIs to bulletproof FastAPI backends — I architect and ship production systems end-to-end, with a focus on clean architecture and developer experience.",
     items: [
       {
-        title: "Backend Engineering",
-        description: "(REST/GraphQL APIs, Microservices, Auth Systems)",
+        title: "Frontend",
+        description: "(React 19, TypeScript, Vite, Tailwind CSS, Zustand)",
       },
       {
-        title: "Frontend Excellence",
-        description: "(React, Vue, TypeScript, Interactive UI/UX)",
+        title: "Backend",
+        description: "(FastAPI, Node.js, Express.js, REST APIs, SSE streaming)",
       },
       {
-        title: "Database Design",
-        description: "(SQL/NoSQL Optimization, Scalable Structures)",
+        title: "Databases",
+        description: "(PostgreSQL, Supabase, MongoDB, SQLite, pgvector)",
       },
     ],
   },
   {
-    title: "DevOps & Cloud Solutions",
+    title: "AI / ML Engineering",
     description:
-      "Deploying software shouldn't be a gamble. I automate infrastructure, enforce security, and leverage cloud platforms (AWS/Azure) to keep your app running smoothly—24/7, at any scale.",
+      "Building agentic systems, RAG pipelines, and production LLM applications — not just wrappers around APIs. Real infrastructure, real reasoning, real results.",
     items: [
       {
-        title: "CI/CD Pipelines",
-        description: "(GitHub Actions, Docker, Kubernetes)",
+        title: "Agentic AI",
+        description: "(LangGraph, ReAct agents, multi-step tool-call reasoning)",
       },
       {
-        title: "Server Management ",
-        description: "(Linux, Nginx, Load Balancing)",
+        title: "RAG & Embeddings",
+        description: "(FAISS, pgvector, Sentence Transformers, Ollama, Instructor)",
       },
       {
-        title: "Performance Tuning",
-        description: "(Caching, Compression, Lighthouse 90+ Scores)",
+        title: "Structured Outputs",
+        description: "(Pydantic, streaming LLM responses, Instructor/SSE)",
       },
     ],
   },
   {
-    title: "Security & Optimization",
+    title: "DevOps & Infrastructure",
     description:
-      "Slow or hacked apps destroy trust. I harden security (XSS/SQLI protection, OAuth) and optimize bottlenecks so your app stays fast, safe, and scalable as you grow.",
+      "Containerized, CI/CD-ready, cloud-deployed. I ship code that actually runs in production — reliably, securely, and at scale.",
     items: [
       {
-        title: "Code Audits",
-        description: "(Refactoring, Tech Debt Cleanup)",
+        title: "Containerization",
+        description: "(Docker, Docker Compose, cloud deployment pipelines)",
       },
       {
-        title: "Pen Testing",
-        description: "(Vulnerability Assessments)",
+        title: "APIs & Protocols",
+        description: "(REST, GraphQL, WebSockets, Server-Sent Events)",
       },
       {
-        title: "SEO Tech Stack",
-        description: "(SSR, Metadata, Structured Data)",
-      },
-    ],
-  },
-  {
-    title: "Web & Mobile Apps",
-    description:
-      "A clunky interface can sink even the best ideas. I craft responsive, pixel perfect web and mobile apps (React Native/Flutter) that users love—bridging design and functionality seamlessly.",
-    items: [
-      {
-        title: "Cross-Platform Apps",
-        description: "(Single codebase for iOS/Android/Web)",
-      },
-      {
-        title: "PWAs",
-        description: "(Offline mode, Push Notifications)",
-      },
-      {
-        title: "E-Commerce",
-        description: "(Checkout flows, Payment Gateways, Inventory APIs)",
+        title: "Tooling",
+        description: "(Git, GitHub Actions, Vite, Linux, Agile workflows)",
       },
     ],
   },
 ];
-/** Project cards for Works section: name, description, image, bgImage, frameworks; href can link to live/demo */
+
 export const projects = [
   {
-    id: 1,
-    name: "Mobile Accessories E-commerce",
-    description:
-      "An online store specializing in phone accessories including cases, chargers, cables, and power banks with MagSafe compatibility.",
-    href: "",
-    image: "/assets/projects/mobile-accessories-store.jpg",
-    bgImage: "/assets/backgrounds/blanket.jpg",
-    frameworks: [
-      { id: 1, name: "React" },
-      { id: 2, name: "Next.js" },
-      { id: 3, name: "Node.js" },
-      { id: 4, name: "MongoDB" },
-      { id: 5, name: "Tailwind CSS" },
-    ],
+    title: "ClearNews",
+    description: "News Narrative Intelligence Platform",
+    tech: "React 19 · TypeScript · FastAPI · LangGraph · pgvector · Docker",
+    image: "/assets/projects/clearnews.jpg",
+    github: "https://github.com/K1NGS1LVER",
+    detail:
+      "Multi-stage ML pipeline ingesting live news feeds — embeddings, sentiment analysis, bias classification, and HDBSCAN story clustering. LangGraph ReAct agent with pgvector semantic search and cited-source SSE streaming.",
   },
   {
-    id: 2,
-    name: "Plant Shop E-commerce",
-    description:
-      "An online store specializing in rare and decorative plants with a clean, user-friendly interface.",
-    href: "",
-    image: "/assets/projects/plant-shop.jpg",
-    bgImage: "/assets/backgrounds/curtains.jpg",
-    frameworks: [
-      { id: 1, name: "React" },
-      { id: 2, name: "Next.js" },
-      { id: 3, name: "Stripe API" },
-      { id: 4, name: "Tailwind CSS" },
-    ],
+    title: "FinPath",
+    description: "AI Financial Planner",
+    tech: "React 19 · TypeScript · FastAPI · LangGraph · Zustand · Supabase",
+    image: "/assets/projects/finpath.jpg",
+    github: "https://github.com/K1NGS1LVER",
+    detail:
+      "Full-stack personal finance app with agentic LangGraph backend for multi-step financial reasoning via SSE-streamed LLM tool calls. Interactive Sankey diagrams, animated sidebar, and a token-based design system with light/dark support.",
   },
   {
-    id: 3,
-    name: "Apple Tech Marketplace",
-    description:
-      "An e-commerce platform for Apple products and accessories with deals and category filtering.",
-    href: "",
-    image: "/assets/projects/apple-tech-store.jpg",
-    bgImage: "/assets/backgrounds/map.jpg",
-    frameworks: [
-      { id: 1, name: "Blazor" },
-      { id: 2, name: "ASP.NET Core" },
-      { id: 3, name: "SQL Server" },
-      { id: 4, name: "Bootstrap" },
-    ],
-  },
-  {
-    id: 4,
-    name: "Electronics & Gadgets Store",
-    description:
-      "A multi-category online shop featuring electronics, home appliances, and gaming gear with special offers.",
-    href: "",
-    image: "/assets/projects/electronics-store.jpg",
-    bgImage: "/assets/backgrounds/poster.jpg",
-    frameworks: [
-      { id: 1, name: "Vue.js" },
-      { id: 2, name: "Laravel" },
-      { id: 3, name: "MySQL" },
-      { id: 4, name: "SCSS" },
-    ],
-  },
-  {
-    id: 5,
-    name: "Home Decor Marketplace",
-    description:
-      "A curated collection of designer home decor items, including furniture and artisan vases.",
-    href: "",
-    image: "/assets/projects/home-decor-store.jpg",
-    bgImage: "/assets/backgrounds/table.jpg",
-    frameworks: [
-      { id: 1, name: "Angular" },
-      { id: 2, name: "Firebase" },
-      { id: 3, name: "GraphQL" },
-      { id: 4, name: "Material UI" },
-    ],
-  },
-  {
-    id: 6,
-    name: "Digital Game Store",
-    description:
-      "A gaming platform featuring discounted titles, top sellers, and genre-based browsing.",
-    href: "",
-    image: "/assets/projects/game-store.jpg",
-    bgImage: "/assets/backgrounds/curtains.jpg",
-    frameworks: [
-      { id: 1, name: "Svelte" },
-      { id: 2, name: "Node.js" },
-      { id: 3, name: "MongoDB" },
-      { id: 4, name: "Chakra UI" },
-    ],
+    title: "docSeek",
+    description: "Semantic Search & RAG System",
+    tech: "Python · FastAPI · FAISS · Sentence Transformers · React",
+    image: "/assets/projects/docseek.jpg",
+    github: "https://github.com/K1NGS1LVER",
+    detail:
+      "Dense vector retrieval engine with FAISS (768-dim), achieving sub-15ms semantic search — a 40% speedup over full-text lookups. Concurrent ingestion pipeline parsing 10,000+ pages in under 5 minutes.",
   },
 ];
-/** Social links used in Navbar and Contact; name + href */
+
 export const socials = [
-  { name: "Instagram", href: "https://www.google.com/" },
   {
-    name: "Youtube",
-    href: "https://www.google.com/",
+    name: "GitHub",
+    href: "https://github.com/K1NGS1LVER",
+    icon: "mdi:github",
   },
-  { name: "LinkedIn", href: "https://www.google.com/" },
-  { name: "GitHub", href: "https://www.google.com/" },
+  {
+    name: "LinkedIn",
+    href: "https://linkedin.com/in/daniel-paul-dev",
+    icon: "mdi:linkedin",
+  },
+  {
+    name: "Email",
+    href: "mailto:danielpaul150604@gmail.com",
+    icon: "mdi:email-outline",
+  },
 ];
