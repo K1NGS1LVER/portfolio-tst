@@ -1,6 +1,7 @@
 /**
- * Contact summary: two marquee strips with a centered CTA in between.
- * ScrollTrigger pins this section while scrolling through (pin: true) for a focused moment.
+ * ContactSummary — original template layout restored exactly.
+ * Two marquee strips, pinned ScrollTrigger, centered CTA quote.
+ * Content: Daniel-specific marquee items and quote.
  */
 import { useRef } from "react";
 import Marquee from "../components/Marquee";
@@ -9,23 +10,24 @@ import gsap from "gsap";
 
 const ContactSummary = () => {
   const containerRef = useRef(null);
+
   const items = [
-    "Innovation",
-    "Precision",
-    "Trust",
-    "Collaboration",
-    "Excellence",
+    "React",
+    "FastAPI",
+    "LangGraph",
+    "TypeScript",
+    "Agentic AI",
   ];
+
   const items2 = [
-    "contact us",
-    "contact us",
-    "contact us",
-    "contact us",
-    "contact us",
+    "let's build",
+    "let's build",
+    "let's build",
+    "let's build",
+    "let's build",
   ];
 
   useGSAP(() => {
-    // Pin this section for ~800px of scroll (start when center hits viewport center)
     gsap.to(containerRef.current, {
       scrollTrigger: {
         trigger: containerRef.current,
@@ -38,6 +40,7 @@ const ContactSummary = () => {
       },
     });
   }, []);
+
   return (
     <section
       ref={containerRef}
@@ -46,10 +49,12 @@ const ContactSummary = () => {
       <Marquee items={items} />
       <div className="overflow-hidden font-light text-center contact-text-responsive">
         <p>
-          “ Let’s build a <br />
-          <span className="font-normal">memorable</span> &{" "}
-          <span className="italic">inspiring</span> <br />
-          web application <span className="text-gold">together</span> “
+          " Let's build something{" "}
+          <br />
+          <span className="font-normal">remarkable</span> &{" "}
+          <span className="italic">impactful</span>
+          <br />
+          together <span className="text-gold">"</span>
         </p>
       </div>
       <Marquee
