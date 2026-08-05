@@ -1,10 +1,14 @@
-/**
- * Global styles: Tailwind, custom font (Amiamie), theme variables, and reusable @utility classes
- * for responsive typography (banner, value, marquee, contact) and clip-path.
- */
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;1,300&display=swap');
 @import "tailwindcss";
 
-/* Amiamie Regular */
+/* ─── Gold theme color — generates text-gold, bg-gold, border-gold etc. ── */
+@theme {
+  --color-gold: #c9a84c;
+  --color-primary: #000000;
+  --font-mono: "JetBrains Mono", monospace;
+}
+
+/* ─── Amiamie Font Family ─────────────────────────────────────────────── */
 @font-face {
   font-family: "Amiamie";
   src: url("/fonts/amiamie/otf/Amiamie-Regular.otf") format("opentype"),
@@ -14,7 +18,6 @@
   font-display: swap;
 }
 
-/* Amiamie Regular Italic */
 @font-face {
   font-family: "Amiamie";
   src: url("/fonts/amiamie/otf/Amiamie-Italic.otf") format("opentype"),
@@ -24,7 +27,6 @@
   font-display: swap;
 }
 
-/* Amiamie Light */
 @font-face {
   font-family: "Amiamie";
   src: url("/fonts/amiamie/otf/Amiamie-Light.otf") format("opentype"),
@@ -34,17 +36,6 @@
   font-display: swap;
 }
 
-/* Amiamie Light Italic */
-@font-face {
-  font-family: "Amiamie";
-  src: url("/fonts/amiamie/otf/Amiamie-LightItalic.otf") format("opentype"),
-    url("/fonts/amiamie/ttf/Amiamie-LightItalic.ttf") format("truetype");
-  font-weight: 300;
-  font-style: italic;
-  font-display: swap;
-}
-
-/* Amiamie Black */
 @font-face {
   font-family: "Amiamie";
   src: url("/fonts/amiamie/otf/Amiamie-Black.otf") format("opentype"),
@@ -54,7 +45,6 @@
   font-display: swap;
 }
 
-/* Amiamie Black Italic */
 @font-face {
   font-family: "Amiamie";
   src: url("/fonts/amiamie/otf/Amiamie-BlackItalic.otf") format("opentype"),
@@ -64,79 +54,84 @@
   font-display: swap;
 }
 
-/* Amiamie-Round Variants (if needed separately) */
-@font-face {
-  font-family: "Amiamie-Round";
-  src: url("/fonts/amiamie/otf/Amiamie-RegularRound.otf") format("opentype"),
-    url("/fonts/amiamie/ttf/Amiamie-RegularRound.ttf") format("truetype");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
+/* ─── Base ────────────────────────────────────────────────────────────── */
+* {
+  box-sizing: border-box;
 }
 
-@font-face {
-  font-family: "Amiamie-Round";
-  src: url("/fonts/amiamie/otf/Amiamie-BlackRound.otf") format("opentype"),
-    url("/fonts/amiamie/ttf/Amiamie-BlackRound.ttf") format("truetype");
-  font-weight: 900;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Amiamie-Round";
-  src: url("/fonts/amiamie/otf/Amiamie-BlackItalicRound.otf") format("opentype"),
-    url("/fonts/amiamie/ttf/Amiamie-BlackItalicRound.ttf") format("truetype");
-  font-weight: 900;
-  font-style: italic;
-  font-display: swap;
-}
-/* Tailwind 4 @theme: design tokens (colors, fonts, keyframes) used across the app */
-@theme {
-  --color-primary: #e5e5e0;
-  --color-DarkLava: #393632;
-  --color-SageGray: #8b8b73;
-  --color-gold: #cfa355;
-  --font-amiamie: "Amiamie", sans-serif;
-  --font-amiamie-round: "Amiamie-Round", sans-serif;
-
-  --animate-marquee: marquee 40s infinite linear;
-  @keyframes marquee {
-    from {
-      transform: translateX(0);
-    }
-    to {
-      transform: translateX(calc(-100% - var(--gap)));
-    }
-  }
+html {
+  scroll-behavior: auto;
+  -webkit-font-smoothing: antialiased;
 }
 
 body {
-  background: #e5e5e0;
-  color: black;
-  scroll-behavior: smooth;
+  font-family: "Amiamie", sans-serif;
+  background-color: #ffffff;
+  color: #000000;
   overflow-x: hidden;
-  font-family: var(--font-amiamie);
 }
 
-/* Custom utilities: clip-path (hidden state for reveal animations), responsive text sizes */
-@utility clip-path {
-  clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%);
-}
-
+/* ─── Responsive Typography Utilities ────────────────────────────────── */
 @utility banner-text-responsive {
-  @apply text-[68px] sm:text-[118px] md:text-[126px] lg:text-[152px] leading-9 sm:leading-16 lg:leading-20;
+  font-size: clamp(3.5rem, 12vw, 14rem);
+  line-height: 0.9;
 }
 
 @utility value-text-responsive {
-  @apply text-2xl md:text-[26px] lg:text-[32px];
+  font-size: clamp(0.85rem, 1.5vw, 1.25rem);
+  line-height: 1.7;
 }
 
 @utility marquee-text-responsive {
-  @apply text-[28px] sm:text-[36px] lg:text-[42px];
+  font-size: clamp(1.2rem, 3.5vw, 3rem);
 }
 
 @utility contact-text-responsive {
-  @apply text-[42px] sm:text-[52px] md:text-[62px] lg:text-[100px];
+  font-size: clamp(2.2rem, 6vw, 7rem);
+  line-height: 1.05;
+}
+
+/* ─── Custom Premium Mouse Trails & Cursor ───────────────────────────────── */
+@media (min-width: 768px) {
+  body, a, button, [role="button"], .cursor-pointer, input, textarea {
+    cursor: none;
+  }
+}
+
+.cursor-dot {
+  pointer-events: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 6px;
+  height: 6px;
+  background-color: #c9a84c;
+  border-radius: 50%;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+}
+
+.cursor-ring {
+  pointer-events: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 32px;
+  height: 32px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 50%;
+  z-index: 9998;
+  transform: translate(-50%, -50%);
+  transition: width 0.25s cubic-bezier(0.25, 1, 0.5, 1),
+              height 0.25s cubic-bezier(0.25, 1, 0.5, 1),
+              background-color 0.25s ease,
+              border-color 0.25s ease;
+}
+
+.cursor-ring.hovered {
+  width: 56px;
+  height: 56px;
+  background-color: rgba(201, 168, 76, 0.08);
+  border-color: #c9a84c;
 }
 
