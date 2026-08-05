@@ -1,6 +1,6 @@
 /**
  * Vite config: React + Tailwind 4. Build uses manualChunks to split vendor bundles
- * (React, Three.js, GSAP) for better caching; chunkSizeWarningLimit raised for the large Three bundle.
+ * (React, GSAP) for better caching. Three.js removed — hero is SVG-based.
  */
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
@@ -14,11 +14,10 @@ export default defineConfig({
       output: {
         manualChunks: {
           'vendor-react': ['react', 'react-dom'],
-          'vendor-three': ['three', '@react-three/fiber', '@react-three/drei'],
           'vendor-gsap': ['gsap', '@gsap/react'],
         },
       },
     },
-    chunkSizeWarningLimit: 1200,
+    chunkSizeWarningLimit: 600,
   },
 });
