@@ -1,6 +1,7 @@
 /**
- * About section: header + image with clip-path reveal + AnimatedTextLines for bio.
- * Section scales slightly on scroll; image animates from “closed” clip to full visibility.
+ * About section — original template layout restored exactly.
+ * White background, black text, clip-path image reveal on scroll.
+ * Content: Daniel's bio, experience timeline, photo, Download CV.
  */
 import { useRef } from "react";
 import AnimatedHeaderSection from "../components/AnimatedHeaderSection";
@@ -9,58 +10,103 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 
 const About = () => {
-  const text = `Passionate about clean architecture
-    I build scalable, high-performance solutions
-    from prototype to production`;
-  const aboutText = `Obsessed with building fast, intuitive apps—from pixel-perfect React UIs to bulletproof serverless backends. Every line of code is a promise: quality that users feel.
-  When I’m not shipping:
-⚡️ Open-sourcing my latest experiment (or hacking on yours)
-🎥 Teaching devs on Twitch/YouTube—because rising tides lift all ships
-🧗 Rock climbing (problem-solving with real stakes)
-🎸 Strumming chords while CI pipelines pass (multitasking at its finest)`;
+  const text = `Full-stack developer & AI/ML engineer\n    with a background in Computer Science & Electronics.\n    Currently pursuing MCA at Christ University, Bengaluru.`;
+
+  const aboutText = `Engineered FinPath — an agentic AI financial platform — during my tenure at Adobe Consulting Services using React, TypeScript, FastAPI, and LangGraph. Presented deliverables to 200+ ACS mentors and senior managers.
+Specialized in REST APIs, RAG pipelines, vector search, and production frontend architecture. I don't just ship features — I build systems that reason.
+🏆 1st — Coding & Debugging Contest, SHELLS 26
+🏆 1st — Interdepartmental Lecture Fest, PRISMATRIX 23
+🥈 2nd — Department Hackathon, REVELATIONS 26 (120 participants)`;
+
   const imgRef = useRef(null);
+
   useGSAP(() => {
-    // Subtle scale-down of whole section as it scrolls through view
     gsap.to("#about", {
       scale: 0.95,
       scrollTrigger: {
         trigger: "#about",
-        start: "bottom 80%",
-        end: "bottom 20%",
-        scrub: true,
-        markers: false,
+        start: "top top",
+        end: "bottom top",
+        scrub: 0.5,
       },
-      ease: "power1.inOut",
     });
 
-    // Start with image “hidden” (clip at bottom); animate to full rectangle on scroll into view
-    gsap.set(imgRef.current, {
-      clipPath: "polygon(0 100%, 100% 100%, 100% 100%, 0% 100%)",
-    });
-    gsap.to(imgRef.current, {
-      clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
-      duration: 2,
-      ease: "power4.out",
-      scrollTrigger: { trigger: imgRef.current },
-    });
-  });
+    gsap.fromTo(
+      imgRef.current,
+      { clipPath: "polygon(0 100%, 100% 100%, 100% 100%, 0 100%)" },
+      {
+        clipPath: "polygon(0 0, 100% 0, 100% 100%, 0% 100%)",
+        duration: 1.5,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: imgRef.current,
+          start: "top 80%",
+        },
+      }
+    );
+  }, []);
+
   return (
-    <section id="about" className="min-h-screen bg-black rounded-b-4xl">
+    <section id="about" className="min-h-screen">
       <AnimatedHeaderSection
-        subTitle={"Cod with purpose, Built to scale"}
+        subTitle={"Adobe Consulting Services · Christ University"}
         title={"About"}
         text={text}
-        textColor={"text-white"}
+        textColor={"text-black"}
         withScrollTrigger={true}
       />
-      <div className="flex flex-col items-center justify-between gap-16 px-10 pb-16 text-xl font-light tracking-wide lg:flex-row md:text-2xl lg:text-3xl text-white/60">
-        <img
+
+      <div className="grid grid-cols-1 gap-12 px-10 pb-20 md:grid-cols-2 md:gap-8">
+        {/* Profile image with clip-path reveal */}
+        <div
           ref={imgRef}
-          src="images/man.jpg"
-          alt="man"
-          className="w-md rounded-3xl"
-        />
-        <AnimatedTextLines text={aboutText} className={"w-full"} />
+          className="relative overflow-hidden rounded-2xl aspect-[3/4] max-h-[600px]"
+          style={{ clipPath: "polygon(0 100%, 100% 100%, 100% 100%, 0 100%)" }}
+        >
+          <img
+            src="/images/daniel.jpg"
+            alt="Daniel Paul — Full-Stack & AI/ML Engineer"
+            className="object-cover w-full h-full"
+            loading="lazy"
+          />
+        </div>
+
+        {/* Bio + experience + Download CV */}
+        <div className="flex flex-col justify-center gap-8">
+          <AnimatedTextLines
+            text={aboutText}
+            className="font-light value-text-responsive text-black/70"
+          />
+
+          {/* Experience quick-cards */}
+          <div className="grid grid-cols-1 gap-3 sm:grid-cols-3">
+            {[
+              { org: "Adobe ACS", role: "Technical Consultant Intern", year: "2026" },
+              { org: "The SocialBytes", role: "Software Tester Intern", year: "2024" },
+              { org: "next24 tech", role: "Web Developer Intern", year: "2024" },
+            ].map((exp, i) => (
+              <div
+                key={i}
+                className="p-4 rounded-xl border border-black/10 bg-black/[0.02]"
+              >
+                <p className="text-xs tracking-widest uppercase mb-1 text-gold font-mono font-normal">
+                  {exp.year}
+                </p>
+                <p className="text-sm font-normal text-black font-mono">{exp.org}</p>
+                <p className="text-xs mt-1 text-black/50">{exp.role}</p>
+              </div>
+            ))}
+          </div>
+
+          {/* Download CV */}
+          <a
+            href="/resume.pdf"
+            download="Daniel_Paul_Resume.pdf"
+            className="inline-flex items-center gap-3 px-8 py-4 rounded-full text-sm tracking-widest uppercase transition-all duration-300 w-fit border-2 border-black text-black hover:bg-black hover:text-white magnetic"
+          >
+            ↓ Download CV
+          </a>
+        </div>
       </div>
     </section>
   );
