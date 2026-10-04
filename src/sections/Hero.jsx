@@ -7,7 +7,7 @@ import AnimatedHeaderSection from "../components/AnimatedHeaderSection";
 import ParticleConstellation from "../components/ParticleConstellation";
 
 const Hero = () => {
-  const text = `Full-stack developer & AI/ML engineer.\nI build agentic AI systems, RAG pipelines,\nand production-grade web applications.`;
+  const text = `Full-stack developer & AI/ML engineer.\nShipped agentic AI platforms, RAG systems,\nand fine-tuned classifiers at Adobe Consulting Services.`;
 
   return (
     <section id="home" className="flex flex-col justify-end min-h-screen">

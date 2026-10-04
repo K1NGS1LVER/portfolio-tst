@@ -8,57 +8,57 @@ export const skillsData = [
   {
     title: "Full-Stack Engineering",
     description:
-      "From pixel-perfect React UIs to bulletproof FastAPI backends — I architect and ship production systems end-to-end, with a focus on clean architecture and developer experience.",
+      "From pixel-perfect React UIs to bulletproof FastAPI backends — I architect and ship production systems end-to-end, with a focus on clean architecture, performance, and eval-driven development.",
     items: [
       {
+        title: "Languages",
+        description: "(Python, TypeScript, JavaScript, SQL, Go, HTML5, CSS3)",
+      },
+      {
         title: "Frontend",
-        description: "(React 19, TypeScript, Vite, Tailwind CSS, Zustand)",
+        description: "(React 19, Vite, Tailwind CSS, Zustand, npm)",
       },
       {
-        title: "Backend",
-        description: "(FastAPI, Node.js, Express.js, REST APIs, SSE streaming)",
-      },
-      {
-        title: "Databases",
-        description: "(PostgreSQL, Supabase, MongoDB, SQLite, pgvector)",
+        title: "Backend & Tooling",
+        description: "(FastAPI, Node.js, PostgreSQL, Supabase, SQLite, Redis, Docker, Git)",
       },
     ],
   },
   {
-    title: "AI / ML Engineering",
+    title: "AI / ML & GenAI",
     description:
-      "Building agentic systems, RAG pipelines, and production LLM applications — not just wrappers around APIs. Real infrastructure, real reasoning, real results.",
+      "Building agentic systems, RAG pipelines, fine-tuned classifiers, and production LLM applications — not just API wrappers. Real infrastructure, real reasoning, real results.",
     items: [
       {
-        title: "Agentic AI",
-        description: "(LangGraph, ReAct agents, multi-step tool-call reasoning)",
+        title: "Agentic AI & RAG",
+        description: "(LangGraph, Corrective RAG, pgvector, FAISS, SQLite FTS5, Ollama)",
       },
       {
-        title: "RAG & Embeddings",
-        description: "(FAISS, pgvector, Sentence Transformers, Ollama, Instructor)",
+        title: "ML & NLP Pipelines",
+        description: "(BERT fine-tuning, XGBoost, SHAP, HDBSCAN, UMAP, spaCy, VADER)",
       },
       {
-        title: "Structured Outputs",
-        description: "(Pydantic, streaming LLM responses, Instructor/SSE)",
+        title: "Audio & Vision",
+        description: "(Whisper STT, Kokoro TTS, Tesseract OCR, SSE Streaming)",
       },
     ],
   },
   {
     title: "DevOps & Infrastructure",
     description:
-      "Containerized, CI/CD-ready, cloud-deployed. I ship code that actually runs in production — reliably, securely, and at scale.",
+      "Containerized, zero-dependency CLI tooling, and resilient API orchestration running reliably in production environments.",
     items: [
       {
         title: "Containerization",
-        description: "(Docker, Docker Compose, cloud deployment pipelines)",
+        description: "(Docker, Docker Compose, Valkey/Redis caching, multi-stage builds)",
       },
       {
         title: "APIs & Protocols",
-        description: "(REST, GraphQL, WebSockets, Server-Sent Events)",
+        description: "(Async FastAPI, REST, Server-Sent Events, WebSockets)",
       },
       {
-        title: "Tooling",
-        description: "(Git, GitHub Actions, Vite, Linux, Agile workflows)",
+        title: "Quality & Testing",
+        description: "(pytest, E2E test suites, Type-safe Pydantic tool schemas)",
       },
     ],
   },
@@ -68,29 +68,47 @@ export const projects = [
   {
     title: "ClearNews",
     description: "News Narrative Intelligence Platform",
-    tech: "React 19 · TypeScript · FastAPI · LangGraph · pgvector · Docker",
-    image: "/assets/projects/clearnews.jpg",
-    github: "https://github.com/K1NGS1LVER",
+    tech: "Python · FastAPI · LangGraph · pgvector · BERT · XGBoost · Docker",
+    image: "/assets/projects/clearnews-new.jpg",
+    github: "https://github.com/K1NGS1LVER/ClearNews",
     detail:
-      "Multi-stage ML pipeline ingesting live news feeds — embeddings, sentiment analysis, bias classification, and HDBSCAN story clustering. LangGraph ReAct agent with pgvector semantic search and cited-source SSE streaming.",
-  },
-  {
-    title: "FinPath",
-    description: "AI Financial Planner",
-    tech: "React 19 · TypeScript · FastAPI · LangGraph · Zustand · Supabase",
-    image: "/assets/projects/finpath.jpg",
-    github: "https://github.com/K1NGS1LVER",
-    detail:
-      "Full-stack personal finance app with agentic LangGraph backend for multi-step financial reasoning via SSE-streamed LLM tool calls. Interactive Sankey diagrams, animated sidebar, and a token-based design system with light/dark support.",
+      "Trained a fine-tuned BERT-base political-bias classifier and XGBoost death-risk forecaster with SHAP explanations over 1,000+ GDELT articles daily. LangGraph+Groq agent on hybrid pgvector + SQLite FTS5 (RRF-fused) retrieval with SSE streaming, Whisper STT, Kokoro TTS voice.",
   },
   {
     title: "docSeek",
-    description: "Semantic Search & RAG System",
-    tech: "Python · FastAPI · FAISS · Sentence Transformers · React",
-    image: "/assets/projects/docseek.jpg",
+    description: "Local-First Agentic RAG & Knowledge Platform",
+    tech: "LangGraph · FAISS · SQLite FTS5 · Ollama · FastAPI · React",
+    image: "/assets/projects/docseek-new.jpg",
+    github: "https://github.com/K1NGS1LVER/docSeek-offline-agentic-RAG",
+    detail:
+      "Architected an on-device Corrective RAG engine with LangGraph + local Ollama (qwen2.5). Fused 768-dim FAISS dense + SQLite FTS5 sparse vectors via RRF for sub-15ms search, AST-aware chunking, 2D force-directed knowledge graph, and Kokoro TTS podcasts.",
+  },
+  {
+    title: "teacher-sab",
+    description: "Teaching System for AI Coding Agents",
+    tech: "Node.js · npm · Interactive CLI · E2E Testing",
+    image: "/assets/projects/teacher-sab.jpg",
     github: "https://github.com/K1NGS1LVER",
     detail:
-      "Dense vector retrieval engine with FAISS (768-dim), achieving sub-15ms semantic search — a 40% speedup over full-text lookups. Concurrent ingestion pipeline parsing 10,000+ pages in under 5 minutes.",
+      "Published an AI-native teaching system to production npm (teacher-sab@0.1.0, zero dependencies) packaging a framework fork into a Node CLI installer covering 10 AI harnesses. Adopts Vercel Labs npx skills add cross-agent convention.",
+  },
+  {
+    title: "mcpium",
+    description: "Composio 100-App Buildability Audit",
+    tech: "Python · TypeScript AST · Gemini Flash · pytest",
+    image: "/assets/projects/mcpium.jpg",
+    github: "https://github.com/K1NGS1LVER/mcpium",
+    detail:
+      "Audited 100 SaaS apps for Composio buildability via three-way triangulation — live Composio catalog (500 toolkits), n8n credential AST (406 integrations), and search-grounded Gemini Flash agent at $0 API cost.",
+  },
+  {
+    title: "neostats_credit_fraud",
+    description: "Credit Risk & Regulatory ML Platform",
+    tech: "LightGBM · EBM · SHAP · DuckDB · Groq · Docker",
+    image: "/assets/projects/neostats.jpg",
+    github: "https://github.com/K1NGS1LVER/neostats_credit_fraud",
+    detail:
+      "Built dual-model credit-risk platform (LightGBM + EBM) cutting Brier score to 0.061 on 10,000 loan records with automated FCRA/ECOA adverse-action notices. Shipped Talk-to-Data DuckDB NL-to-SQL with AST security guardrails & 4-tier LLM fallback.",
   },
 ];
 

@@ -4,6 +4,7 @@
  * Daniel's content: email, socials, section IDs updated to include "skills".
  */
 import React, { useEffect, useRef, useState } from "react";
+import { Icon } from "@iconify/react/dist/iconify.js";
 import { socials } from "../constants";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
@@ -186,6 +187,20 @@ const Navbar = () => {
           className="block w-8 h-0.5 bg-white rounded-full origin-center"
         />
       </div>
+      {/* Fixed bottom-left contact pill — always visible on every section */}
+      <a
+        href="mailto:danielpaul150604@gmail.com"
+        aria-label="Send me an email"
+        className="fixed z-40 bottom-8 left-8 flex items-center gap-3 px-7 py-4 rounded-full text-sm tracking-widest uppercase font-mono border-2 border-black text-black bg-white/90 backdrop-blur-sm shadow-lg transition-all duration-300 hover:bg-black hover:text-white magnetic"
+        style={{
+          opacity: showBurger ? 1 : 0,
+          pointerEvents: showBurger ? "auto" : "none",
+          transition: "opacity 0.3s ease, background-color 0.3s ease, color 0.3s ease",
+        }}
+      >
+        <Icon icon="mdi:email-fast-outline" className="text-base shrink-0" />
+        Let's talk
+      </a>
     </>
   );
 };

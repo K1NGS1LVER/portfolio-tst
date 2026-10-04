@@ -71,24 +71,24 @@ body {
   overflow-x: hidden;
 }
 
-/* ─── Responsive Typography Utilities ────────────────────────────────── */
+/* ─── Responsive Typography Utilities (Optimized to prevent line overlaps) ─ */
 @utility banner-text-responsive {
-  font-size: clamp(3.5rem, 12vw, 14rem);
-  line-height: 0.9;
+  font-size: clamp(2.5rem, 8vw, 8rem);
+  line-height: 1.05;
 }
 
 @utility value-text-responsive {
-  font-size: clamp(0.85rem, 1.5vw, 1.25rem);
-  line-height: 1.7;
+  font-size: clamp(0.85rem, 1.3vw, 1.15rem);
+  line-height: 1.65;
 }
 
 @utility marquee-text-responsive {
-  font-size: clamp(1.2rem, 3.5vw, 3rem);
+  font-size: clamp(1rem, 2.5vw, 2rem);
 }
 
 @utility contact-text-responsive {
-  font-size: clamp(2.2rem, 6vw, 7rem);
-  line-height: 1.05;
+  font-size: clamp(1.8rem, 4.5vw, 4.5rem);
+  line-height: 1.2;
 }
 
 /* ─── Custom Premium Mouse Trails & Cursor ───────────────────────────────── */
@@ -134,4 +134,3 @@ body {
   background-color: rgba(201, 168, 76, 0.08);
   border-color: #c9a84c;
 }
-

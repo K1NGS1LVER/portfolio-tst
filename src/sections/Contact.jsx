@@ -15,11 +15,12 @@ const Contact = () => {
   const text = `Got a question, a project idea,\n    or an opportunity? I'd love\n    to hear from you.`;
 
   const items = [
-    "available for hire",
-    "available for hire",
-    "available for hire",
-    "available for hire",
-    "available for hire",
+    "AGENTIC AI SYSTEMS",
+    "PRODUCTION RAG PIPELINES",
+    "FULL-STACK ARCHITECTURE",
+    "EVAL-DRIVEN DEVELOPMENT",
+    "TYPE-SAFE LLM TOOLING",
+    "SUB-15MS VECTOR SEARCH",
   ];
 
   useGSAP(() => {

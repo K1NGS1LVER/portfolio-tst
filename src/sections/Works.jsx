@@ -128,9 +128,14 @@ const Works = () => {
                   <h3 className="text-2xl md:text-4xl lg:text-5xl font-light text-black">
                     {project.title}
                   </h3>
-                  <p className="text-sm mt-1 tracking-wider text-black/50">
+                  <p className="text-sm mt-1 tracking-wider text-black/50 font-medium">
                     {project.description}
                   </p>
+                  {project.detail && (
+                    <p className="text-xs mt-2 text-black/70 max-w-3xl leading-relaxed">
+                      {project.detail}
+                    </p>
+                  )}
                   
                   {/* Tech stack badges */}
                   <div className="flex flex-wrap gap-2 mt-3">
